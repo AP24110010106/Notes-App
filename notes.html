@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="notes-page">
+
+<h2>My Notes</h2>
+<p id="welcomeMessage">Welcome, <span id="usernameDisplay"></span>!</p>
+
+<input type="text" id="search" placeholder="Search notes..." onkeyup="searchNotes()">
+
+<br><br>
+
+<div id="noteForm">
+    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+    <br>
+    <button onclick="saveNote()" id="saveButton">Add Note</button>
+    <button onclick="cancelEdit()" id="cancelButton" style="display: none;">Cancel</button>
+</div>
+
+<div id="notesMessage" class="notes-message"></div>
+
+<ul id="notesList"></ul>
+
+<button onclick="logout()">Logout</button>
+
+<script src="script.js"></script>
+</body>
+</html>

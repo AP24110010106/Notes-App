@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="login-box">
+        <div class="login-header">
+            <h1 id="formTitle">Welcome Back</h1>
+            <p id="formSubtitle">Sign in to your account</p>
+        </div>
+        
+        <form id="authForm" onsubmit="handleSubmit(event)">
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                        oninput="validateUsername()"
+                        onblur="validateUsername()"
+                    >
+                    <span class="input-error" id="usernameError"></span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                        oninput="validatePassword()"
+                        onblur="validatePassword()"
+                    >
+                    <button type="button" class="password-toggle" id="passwordToggle" onclick="togglePasswordVisibility()">Show</button>
+                    <span class="input-error" id="passwordError"></span>
+                </div>
+                <div id="passwordStrength" class="password-strength"></div>
+            </div>
+
+            <div class="form-options">
+                <label class="checkbox-label" id="rememberMeLabel" style="display: flex;">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Remember me</span>
+                </label>
+            </div>
+
+            <button type="submit" id="submitButton" class="submit-button">
+                <span id="buttonText">Login</span>
+                <span id="buttonLoader" class="loader"></span>
+            </button>
+        </form>
+
+        <div class="form-footer">
+            <p id="toggleText">Don't have an account?</p>
+            <button type="button" onclick="toggleMode()" id="toggleButton" class="toggle-button">Create Account</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
